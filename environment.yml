@@ -1,0 +1,40 @@
+name: instanthead
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+
+  - pytorch=2.4.1
+  - torchvision=0.19.1
+  - pytorch-cuda=12.1
+
+  - pyyaml
+  - pip
+
+  - pip:
+      - --extra-index-url=https://docs.gsplat.studio/whl/pt24cu121
+      - tensorflow-cpu==2.18.0
+      - diffusers==0.29.0
+      - transformers==4.57.1
+      - albumentations==1.4.24
+      - numba==0.60.0
+      - numpy==1.26.4
+      - einops
+      - kornia
+      - lpips
+      - mtcnn
+      - scikit-image
+      - torchsummary
+      - opencv-python==4.10.0.84
+      - opencv-python-headless==4.10.0.84
+      - mediapipe==0.10.21
+      - dlib==19.24.6
+      - timm==0.9.7
+      - gsplat==1.5.3
+      - nvdiffrast==0.3.3
+      - face-alignment==1.4.1
