@@ -7,8 +7,6 @@ Kaiwen Jiang, Xueting Li, Seonwook Park, Ravi Ramamoorthi, Shalini De Mello, Kok
 
 [**Paper**](https://arxiv.org/abs/2512.16893) | [**Project**](https://research.nvidia.com/labs/amri/projects/instant4d) | [**Video**](https://youtu.be/uiUFoE5SoYo) | [**Checkpoints**](https://ucsdcloud-my.sharepoint.com/:u:/g/personal/k1jiang_ucsd_edu/IQCpqR0vq10NToG8hw3r-4obAfLq7OoW68z_2lmIW-SRDZo?e=dinyEt)
 
-*This repository contains components under different licenses. Refer to individual file headers and the accompanying license files for the terms applicable to each component.*
-
 Abstract: *Portrait animation has witnessed tremendous quality improvements thanks to recent advances in video diffusion models. However, these 2D methods often compromise 3D consistency and speed, limiting their applicability in real-world scenarios, such as digital twins or telepresence. In contrast, 3D-aware feedforward facial animation methods -- built upon 3D representations, such as neural radiance fields or Gaussian splatting -- ensure 3D consistency and achieve faster inference speed, but come with inferior expression details. In this paper, we address this portrait animation trilemma (speed, 3D consistency, and expressiveness) and propose a pipeline that instantly converts an in-the-wild single image into a 3D-consistent, fast yet expressive animatable representation via a feed-forward encoder. Unlike previous computationally intensive global fusion mechanisms (e.g., multiple attention layers) for fusing 3D structural and animation information, our design employs an efficient lightweight local fusion strategy to achieve high animation expressivity. Furthermore, our animation representation is decoupled from the face's 3D representation and learns motion implicitly from data, eliminating the dependency on pre-defined parametric models that often constrain animation capabilities. Our method runs at 107.31 FPS for animation and pose control, representing a 3-4 order of magnitude speedup versus the state of the art while achieving comparable animation quality, thus surpassing alternative designs that trade speed for quality or vice versa.*
 
 ## Requirements
@@ -80,6 +78,9 @@ $ python inference.py --measure_speed --assume_fixed_crop_box_for_driving_images
 We integrate the calculation of metrics in the `metrics_cal.py` script. We test on the [VOODOO-XP test set](https://github.com/mbzuai-metaverse/voodooxp-official). Inside the `checkpoints` folder, we share the lists `voodooxp_self_reenactment.txt` and `voodooxp_cross_reenactment.txt` for reproducing our experiments. Each file contains a list of pairs of video names. The source image is taken from the first frame of the first video, while the driving images are taken from the frames of the second video.
 
 After establishing the triplet of source image, driving images and predicted images, we provide the `eval.py` script to calculate the metrics.
+
+## License
+This repository contains components under different licenses. Refer to individual file headers and the accompanying license files for the terms applicable to each component.
 
 ## Citation
 ```bibtex
